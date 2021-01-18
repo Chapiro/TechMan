@@ -38,4 +38,5 @@ print(data.groupby('uid').sum().sort_values(by=['result'])) #асессор с u
 print(data[data['result'] == 0].groupby('uid').count().sort_values(by=['result'])) #Асессор с uid 56 справился хуже всех — 236 неправильных ответов
 print(data[data['uid'] == 56][data['result'] == 1].groupby('uid').count().sort_values(by=['result'])) #175 верных ответов (42.5%) было у асессора с uid 56
 print(data[data['uid'] == 191][data['result'] == 0].groupby('uid').count().sort_values(by=['result'])) #38 ошибок у асессора с uid 191. Меньше всего ошибок у 184 асессора, но в процентом соотношении лучший 191.
+print(data[data['uid'] == 191][data['jud'] == 0].groupby('uid').count().sort_values(by=['jud'])) #У асессора «191» из 484 оценок было 407 с ответом «0» — это 84% всех ответов. В правильных ответах значение «0» имеют 88%.
 
